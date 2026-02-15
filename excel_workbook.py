@@ -390,6 +390,3 @@ daily_col_widths = [14, 10, 20, 20, 14, 18, 14]
 for i, w in enumerate(daily_col_widths):
     ws_daily.column_dimensions[get_column_letter(i+1)].width = w
 
-# Save
-wb.save('/home/claude/analysis.xlsx')
-print("Done \u2014 4 new sheets added!")
