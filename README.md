@@ -19,3 +19,23 @@ No BB: 'no_bb' in name.lower() → substring check → yes
 Speed: 'speed' in name.lower() → substring check → no
 
 
+regex use cases:
+
+1. for analysis/charts:
+lot_match = re.search(r'(Pilot\d+)', name)
+config_matches = re.findall(r'(c-\d+)', name)
+
+
+2: excel wkbk
+pilot_match = re.search(r'(Pilot\d+)', name)
+config_matches = re.findall(r'(c-\d+)', name)
+
+
+important:
+
+both scripts import re at the top and use the same parse function. The two regex patterns are:
+
+r'(Pilot\d+)' — matches "Pilot" followed by one or more digits → extracts Pilot1, Pilot2, etc.
+r'(c-\d+)' — matches "c-" followed by one or more digits → extracts c-100, c-111, c-198, etc.
+
+The other fields (quality, no_bb, speed) use simple string matching ('_hq' in name), not regex
